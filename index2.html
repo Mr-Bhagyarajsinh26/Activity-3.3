@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <button id="openModalButton">Open Modal</button>
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
+    
+    <table id="imageTable">
+        <thead>
+            <tr>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+</body>
+<script>
+    // Get the modal and image element
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const openModalButton = document.getElementById('openModalButton');
+const closeModalButton = document.getElementById('closeModal');
+const imageTable = document.getElementById('imageTable').getElementsByTagName('tbody')[0];
+
+// When the "Open Modal" button is clicked, set the image source and display the modal
+openModalButton.addEventListener('click', function () {
+    modalImage.src = 'path/to/your-image.jpg'; // Set the image source
+    modal.style.display = 'block'; // Display the modal
+});
+
+// When the close button or the background is clicked, close the modal
+closeModalButton.addEventListener('click', function () {
+    modal.style.display = 'none'; // Close the modal
+});
+
+// Close the modal when the user clicks anywhere outside the modal content
+window.addEventListener('click', function (event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Add the image to the table
+function addImageToTable(imageSource) {
+    const newRow = imageTable.insertRow();
+    const cell = newRow.insertCell(0);
+    const image = document.createElement('img');
+    image.src = imageSource;
+    cell.appendChild(image);
+}
+
+// When the "Add to Table" button is clicked, add the image to the table
+document.getElementById('addToTableButton').addEventListener('click', function () {
+    const imageSource = modalImage.src;
+    addImageToTable(imageSource);
+});
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+h1{
+    color: white;
+    font-size: xxx-large;
+}
+
+.heading{
+    text-align: center;
+    padding: 40px 0;
+}
+
+.new_nav{
+    background-color: white;
+}
+
+th{
+    color: #3B7197;
+}
+
+h2{
+    color: #3B7197;
+
+}
+
+.form-control{
+    display: inline-flex !important;
+    width: 70% !important;
+    margin-left: 15px;
+}
+
+.mz-3 {
+    margin-right: 1rem !important;
+    margin-left: 3rem !important;
+}
+
+.img_button{
+    border: 1px solid #ced4da;
+}
